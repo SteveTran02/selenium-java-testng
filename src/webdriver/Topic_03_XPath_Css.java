@@ -143,11 +143,7 @@ public class Topic_03_XPath_Css {
 		
 		
 		//Action 2
-		driver.findElement(By.id("txtFirstname")).sendKeys("Steve Tran");
-		driver.findElement(By.id("txtEmail")).sendKeys("stevetran@gmail.com");
-		driver.findElement(By.id("txtCEmail")).sendKeys("stevetran@gmail.com");
-		driver.findElement(By.id("txtPassword")).sendKeys("123456");
-		driver.findElement(By.id("txtCPassword")).sendKeys("123456");
+		driver.findElement(By.id("txtPhone")).clear();
 		driver.findElement(By.id("txtPhone")).sendKeys("0976963253245");
 		
 		driver.findElement(By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ']")).click();
@@ -157,11 +153,7 @@ public class Topic_03_XPath_Css {
 		
 		
 		//Action 3
-		driver.findElement(By.id("txtFirstname")).sendKeys("Steve Tran");
-		driver.findElement(By.id("txtEmail")).sendKeys("stevetran@gmail.com");
-		driver.findElement(By.id("txtCEmail")).sendKeys("stevetran@gmail.com");
-		driver.findElement(By.id("txtPassword")).sendKeys("123456");
-		driver.findElement(By.id("txtCPassword")).sendKeys("123456");
+		driver.findElement(By.id("txtPhone")).clear();
 		driver.findElement(By.id("txtPhone")).sendKeys("069646056");
 		
 		driver.findElement(By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ']")).click();
