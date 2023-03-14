@@ -35,7 +35,7 @@ public class Topic_11_Custom_Checkbox_Radio {
 		driver.manage().window().maximize();
 	}
 
-	// @Test
+	@Test
 	public void TC_01_Using_Javascript() {
 		
 		driver.get("https://tiemchungcovid19.gov.vn/portal/register-person");
