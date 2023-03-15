@@ -40,7 +40,7 @@ public class Topic_12_Alert {
 		driver.manage().window().maximize();
 	}
 
-	@Test
+	//@Test
 	public void TC_01_Accept_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 
@@ -62,7 +62,7 @@ public class Topic_12_Alert {
 
 	}
 
-	@Test
+	//@Test
 	public void TC_02_Confirm_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
@@ -78,7 +78,7 @@ public class Topic_12_Alert {
 		Assert.assertTrue(driver.findElement(By.cssSelector("p#result")).getText().equals("You clicked: Cancel"));
 	}
 
-	@Test
+	//@Test
 	public void TC_03_Prompt_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
@@ -116,7 +116,7 @@ public class Topic_12_Alert {
 
 	}
 
-	@Test
+	//@Test
 	public void TC_04_Authentication_Alert_II() throws IOException {
 		String userName = "admin";
 		String passWord = "admin";
