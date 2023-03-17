@@ -38,7 +38,7 @@ public class Topic_13_Action_Part_I {
 		driver.manage().window().maximize();
 	}
 
-	// @Test
+	@Test
 	public void TC_01_Hover_To_Element_Tooltip() {
 		driver.get("https://automationfc.github.io/jquery-tooltip/");
 
@@ -49,7 +49,7 @@ public class Topic_13_Action_Part_I {
 				"We ask for your age only for statistical purposes.");
 	}
 
-	// @Test
+	@Test
 	public void TC_02_Myntra() {
 		driver.get("http://www.myntra.com/");
 		sleepInSecond(9);
@@ -66,7 +66,7 @@ public class Topic_13_Action_Part_I {
 
 	}
 
-	// @Test
+	@Test
 	public void TC_03_Fahasha() {
 		driver.get("https://www.fahasa.com/");
 		sleepInSecond(10);
