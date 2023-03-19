@@ -78,7 +78,6 @@ public class Topic_14_Action_Part_II {
 		
 
 		// Action
-		
 		// Nhấn Control xuống
 		action.keyDown(key).perform();
 		// Click chọn các số random
