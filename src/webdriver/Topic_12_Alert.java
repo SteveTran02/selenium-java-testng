@@ -40,7 +40,7 @@ public class Topic_12_Alert {
 		driver.manage().window().maximize();
 	}
 
-	//@Test
+	@Test
 	public void TC_01_Accept_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 
@@ -93,7 +93,7 @@ public class Topic_12_Alert {
 		Assert.assertEquals(driver.findElement(By.cssSelector("p#result")).getText(), "You entered: " + message);
 	}
 
-	@Test
+	//@Test
 	public void TC_04_Authentication_Alert_I() {
 		// Truyền trực tiếp username and password vào url tự động signin
 		// http:// + [username:passowrd@] + the-internet.herokuapp.com/basic_auth
