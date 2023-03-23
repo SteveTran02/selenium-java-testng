@@ -13,7 +13,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_17_Popup_Part_III_Random {
+public class Topic_16_Popup_Part_III_Random {
 	WebDriver driver;
 	JavascriptExecutor jsExecutor;
 	WebDriverWait explicitWait;

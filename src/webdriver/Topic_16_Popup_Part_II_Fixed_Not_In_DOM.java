@@ -16,7 +16,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_17_Popup_Part_II_Fixed_Not_In_DOM {
+public class Topic_16_Popup_Part_II_Fixed_Not_In_DOM {
 	WebDriver driver;
 	JavascriptExecutor jsExecutor;
 	WebDriverWait explicitWait;
