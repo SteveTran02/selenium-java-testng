@@ -156,10 +156,7 @@ public class Topic_20_Upload_File {
 		
 	}
 
-	@Test
-	public void TC_03_() {
-		
-	}
+
 
 	public void sleepInSecond(long timeInSecond) {
 		try {
