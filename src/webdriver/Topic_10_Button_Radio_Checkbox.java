@@ -144,7 +144,6 @@ public class Topic_10_Button_Radio_Checkbox {
 		}
 	}
 	
-	
 	// Check element enable or disable
 	public boolean isElementEnable(By by) {
 		WebElement element = driver.findElement(by);
