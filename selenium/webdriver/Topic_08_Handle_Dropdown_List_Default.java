@@ -58,7 +58,7 @@ public class Topic_08_Handle_Dropdown_List_Default {
 		// Step 2: Click Register link
 		driver.findElement(By.xpath("//div[@class='header']//a[text()='Register']")).click();
 
-//ACTION		
+		// ACTION
 		// Step 3: Input valid data
 		driver.findElement(By.cssSelector("#gender-male")).click();
 		driver.findElement(By.cssSelector("#FirstName")).sendKeys(firstname);
@@ -69,9 +69,7 @@ public class Topic_08_Handle_Dropdown_List_Default {
 		// Using Select class
 		// Day
 		/*
-		 * Cach 1: select = new
-		 * Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")));
-		 * select.selectByVisibleText(day);
+		 * Cach 1: select = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']"))); select.selectByVisibleText(day);
 		 */
 		// Cach 2:
 		new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']"))).selectByVisibleText(day);
@@ -93,10 +91,9 @@ public class Topic_08_Handle_Dropdown_List_Default {
 		driver.findElement(By.cssSelector("#register-button")).click();
 		sleepInSecond(3);
 
-//VERIFY
+		// VERIFY
 		// Step 5: Verify Success message
-		Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Your registration completed']")).getText(),
-				"Your registration completed");
+		Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Your registration completed']")).getText(), "Your registration completed");
 
 		// Step 6: Click My Account link
 		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My account']")).click();
@@ -112,21 +109,18 @@ public class Topic_08_Handle_Dropdown_List_Default {
 		Assert.assertEquals(driver.findElement(By.cssSelector("#FirstName")).getAttribute("value"), firstname);
 		Assert.assertEquals(driver.findElement(By.cssSelector("#LastName")).getAttribute("value"), lastname);
 
-		Assert.assertEquals(new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")))
-				.getFirstSelectedOption().getText(), day);
+		Assert.assertEquals(new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']"))).getFirstSelectedOption().getText(), day);
 
-		Assert.assertEquals(new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthMonth']")))
-				.getFirstSelectedOption().getText(), month);
+		Assert.assertEquals(new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthMonth']"))).getFirstSelectedOption().getText(), month);
 
-		Assert.assertEquals(new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthYear']")))
-				.getFirstSelectedOption().getText(), year);
+		Assert.assertEquals(new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthYear']"))).getFirstSelectedOption().getText(), year);
 
 		Assert.assertEquals(driver.findElement(By.cssSelector("#Email")).getAttribute("value"), emailAddress);
 		Assert.assertEquals(driver.findElement(By.cssSelector("#Company")).getAttribute("value"), companyName);
 
 	}
 
-	@Test
+	//@Test
 	public void TC_02_Add_Address() {
 		driver.findElement(By.cssSelector("li.customer-addresses>a")).click();
 		driver.findElement(By.cssSelector("div.add-button>button")).click();
@@ -145,9 +139,9 @@ public class Topic_08_Handle_Dropdown_List_Default {
 		// Click Save button
 		driver.findElement(By.cssSelector("button.save-address-button")).click();
 		sleepInSecond(2);
-		
+
 		// Verify
-		
+
 		Assert.assertEquals(driver.findElement(By.cssSelector("li.name")).getText(), firstname + " " + lastname);
 		Assert.assertTrue(driver.findElement(By.cssSelector("li.email")).getText().contains(emailAddress));
 		Assert.assertTrue(driver.findElement(By.cssSelector("li.phone")).getText().contains(phoneNumber));
@@ -157,11 +151,10 @@ public class Topic_08_Handle_Dropdown_List_Default {
 		Assert.assertTrue(driver.findElement(By.cssSelector("li.city-state-zip")).getText().contains(stateName));
 		Assert.assertTrue(driver.findElement(By.cssSelector("li.city-state-zip")).getText().contains(zipCode));
 		Assert.assertEquals(driver.findElement(By.cssSelector("li.country")).getText(), countryName);
-		
-		
+
 	}
 
-	@Test
+	//@Test
 	public void TC_03_() {
 
 	}

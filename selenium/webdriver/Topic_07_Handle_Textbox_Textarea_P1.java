@@ -163,11 +163,6 @@ public class Topic_07_Handle_Textbox_Textarea_P1 {
 		Assert.assertEquals(driver.findElement(By.xpath("//label[text()='Comments']/parent::div/following-sibling::div/textarea")).getAttribute("value"), comments);
 	}
 
-	@Test
-	public void TC_02() {
-		
-	}
-
 	public void sleepInSecond(long timeInSecond) {
 		try {
 			Thread.sleep(timeInSecond * 1000);;
