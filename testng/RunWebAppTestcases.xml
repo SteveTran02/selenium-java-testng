@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite parallel="false" name="Tiki - Web Automation UI">
+	
+	<test name="Run on Chrome Browser">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserVersion" value="115" />
+		<parameter name="platform" value="windows" />
+		
+		<classes>
+			<class name="webApp.Customer" />
+		</classes>
+	</test>
+	
+</suite>

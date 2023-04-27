@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Parameter">
+
+	<parameter name="environment" value="live" />
+
+	<test name="Run on Firefox Browser">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="parameter.MultipleEnvironment" />
+		</classes>
+	</test>
+
+	<test name="Run on Chrome Browser">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="parameter.MultipleEnvironment" />
+		</classes>
+	</test>
+
+	<test name="Run on Edge Browser">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="parameter.MultipleEnvironment" />
+		</classes>
+	</test>
+
+</suite>

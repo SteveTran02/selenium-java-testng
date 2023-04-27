@@ -154,10 +154,6 @@ public class Topic_08_Handle_Dropdown_List_Default {
 
 	}
 
-	//@Test
-	public void TC_03_() {
-
-	}
 
 	public void sleepInSecond(long timeInSecond) {
 		try {
