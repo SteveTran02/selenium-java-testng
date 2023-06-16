@@ -23,7 +23,7 @@ public class Topic_12_Alert {
 	String osName = System.getProperty("os.name");
 	String authenFirefox = projectPath + "\\autoIT\\authen_firefox.exe";
 	String authenChrome = projectPath + "\\autoIT\\authen_chrome.exe";
-	
+
 	@BeforeClass
 	public void beforeClass() {
 		if (osName.contains("Windows")) {
@@ -34,7 +34,7 @@ public class Topic_12_Alert {
 
 		driver = new FirefoxDriver();
 		System.out.println(driver.toString());
-		
+
 		explicitWait = new WebDriverWait(driver, 10);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -57,12 +57,11 @@ public class Topic_12_Alert {
 		alert.accept();
 		sleepInSecond(2);
 		// Verify message
-		Assert.assertEquals(driver.findElement(By.cssSelector("p#result")).getText(),
-				"You clicked an alert successfully");
+		Assert.assertEquals(driver.findElement(By.cssSelector("p#result")).getText(), "You clicked an alert successfully");
 
 	}
 
-	//@Test
+	// @Test
 	public void TC_02_Confirm_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
@@ -78,7 +77,7 @@ public class Topic_12_Alert {
 		Assert.assertTrue(driver.findElement(By.cssSelector("p#result")).getText().equals("You clicked: Cancel"));
 	}
 
-	//@Test
+	// @Test
 	public void TC_03_Prompt_Alert() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 		driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
@@ -93,50 +92,49 @@ public class Topic_12_Alert {
 		Assert.assertEquals(driver.findElement(By.cssSelector("p#result")).getText(), "You entered: " + message);
 	}
 
-	//@Test
+	// @Test
 	public void TC_04_Authentication_Alert_I() {
 		// Truyền trực tiếp username and password vào url tự động signin
 		// http:// + [username:passowrd@] + the-internet.herokuapp.com/basic_auth
 		// driver.get("http://admin:admin@the-internet.herokuapp.com/basic_auth");
-		
+
 		String userName = "admin";
 		String passWord = "admin";
-		
-		
+
 		driver.get("http://the-internet.herokuapp.com");
-		
-		String urlBasicAuth =  driver.findElement(By.xpath("//a[text()='Basic Auth']")).getAttribute("href");
+
+		String urlBasicAuth = driver.findElement(By.xpath("//a[text()='Basic Auth']")).getAttribute("href");
 		System.out.println(urlBasicAuth);
-		
+
 		driver.get(passUserAndPassToUrl(urlBasicAuth, userName, passWord));
 		sleepInSecond(5);
-		
+
 		// Verify success message
 		Assert.assertTrue(driver.findElement(By.cssSelector("div.example")).isDisplayed());
 
 	}
 
-	//@Test
+	// @Test
 	public void TC_04_Authentication_Alert_II() throws IOException {
 		String userName = "admin";
 		String passWord = "admin";
-		
+
 		if (driver.toString().contains("firefox")) {
 			// Runtime.getRuntime().exec: thực thi 1 file .exe trong code Java
 			Runtime.getRuntime().exec(new String[] { authenFirefox, userName, passWord });
 		} else if (driver.toString().contains("chrome")) {
 			Runtime.getRuntime().exec(new String[] { authenFirefox, userName, passWord });
 		}
-		
+
 		driver.get("http://the-internet.herokuapp.com/basic_auth");
 		sleepInSecond(9);
-		
+
 		// Verify success message
 		Assert.assertTrue(driver.findElement(By.cssSelector("div.example")).isDisplayed());
-		
+
 	}
-		
-    public String passUserAndPassToUrl(String url, String userName, String passWord) {
+
+	public String passUserAndPassToUrl(String url, String userName, String passWord) {
 		String[] arrayUrl = url.split("//");
 		return arrayUrl[0] + "//" + userName + ":" + passWord + "@" + arrayUrl[1];
 	}

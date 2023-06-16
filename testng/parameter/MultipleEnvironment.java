@@ -61,11 +61,9 @@ public class MultipleEnvironment {
 		driver.findElement(By.xpath("//a[text()='Log Out']")).click();
 	}
 
-	
 	public String getEnvironmentName(String environmentName) {
-		
 		String Url = null;
-		
+
 		switch (environmentName.toLowerCase()) {
 		case "dev":
 			Url = "http://dev.techpanda.org";
@@ -81,9 +79,7 @@ public class MultipleEnvironment {
 		}
 		return Url;
 	}
-	
-	
-	
+
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		driver.quit();
