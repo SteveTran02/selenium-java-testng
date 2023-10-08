@@ -69,24 +69,18 @@ public class Topic_10_Button_Radio_Checkbox {
 		driver.findElement(By.xpath("//label[contains(text(),\"I don't drink\")]/preceding-sibling::input")).click();
 
 		// Verify checkbox, radio button is selected
-		Assert.assertTrue(driver.findElement(By.xpath("//label[contains(text(),'Anemia')]/preceding-sibling::input"))
-				.isSelected());
-		Assert.assertTrue(
-				driver.findElement(By.xpath("//label[contains(text(),\"I don't drink\")]/preceding-sibling::input"))
-						.isSelected());
+		Assert.assertTrue(driver.findElement(By.xpath("//label[contains(text(),'Anemia')]/preceding-sibling::input")).isSelected());
+		Assert.assertTrue(driver.findElement(By.xpath("//label[contains(text(),\"I don't drink\")]/preceding-sibling::input")).isSelected());
 
 		// Checkbox có thể tự bỏ chọn được
 		driver.findElement(By.xpath("//label[contains(text(),'Anemia')]/preceding-sibling::input")).click();
 		// Verify checkbox bỏ chọn rồi
-		Assert.assertFalse(driver.findElement(By.xpath("//label[contains(text(),'Anemia')]/preceding-sibling::input"))
-				.isSelected());
+		Assert.assertFalse(driver.findElement(By.xpath("//label[contains(text(),'Anemia')]/preceding-sibling::input")).isSelected());
 
 		// Radio không thể tự bỏ chọn được
 		driver.findElement(By.xpath("//label[contains(text(),\"I don't drink\")]/preceding-sibling::input")).click();
 		// Verify radio vẫn được chọn rồi
-		Assert.assertTrue(
-				driver.findElement(By.xpath("//label[contains(text(),\"I don't drink\")]/preceding-sibling::input"))
-						.isSelected());
+		Assert.assertTrue(driver.findElement(By.xpath("//label[contains(text(),\"I don't drink\")]/preceding-sibling::input")).isSelected());
 
 	}
 
@@ -103,11 +97,10 @@ public class Topic_10_Button_Radio_Checkbox {
 		for (WebElement checkbox : allCheckboxes) {
 			Assert.assertTrue(checkbox.isSelected());
 		}
-		
-		
+
 		// Nếu như gặp 1 checkbox có tên là X mới click
 		for (WebElement checkbox : allCheckboxes) {
-			if(checkbox.getAttribute("value").equals("Emotional Disorder")) {
+			if (checkbox.getAttribute("value").equals("Emotional Disorder")) {
 				checkbox.click();
 			}
 		}
@@ -131,19 +124,19 @@ public class Topic_10_Button_Radio_Checkbox {
 		checkToCheckbox(By.xpath("//label[text()='2.0 Petrol, 147kW']/preceding-sibling::input"));
 		Assert.assertTrue(driver.findElement(By.xpath("//label[text()='2.0 Petrol, 147kW']/preceding-sibling::input")).isSelected());
 	}
-	
+
 	public void checkToCheckbox(By by) {
-		if(!driver.findElement(by).isSelected()) {
+		if (!driver.findElement(by).isSelected()) {
 			driver.findElement(by).click();
 		}
 	}
-	
+
 	public void unCheckToCheckbox(By by) {
-		if(driver.findElement(by).isSelected()) {
+		if (driver.findElement(by).isSelected()) {
 			driver.findElement(by).click();
 		}
 	}
-	
+
 	// Check element enable or disable
 	public boolean isElementEnable(By by) {
 		WebElement element = driver.findElement(by);
@@ -159,7 +152,6 @@ public class Topic_10_Button_Radio_Checkbox {
 	public void sleepInSecond(long timeInSecond) {
 		try {
 			Thread.sleep(timeInSecond * 1000);
-			;
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

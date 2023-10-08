@@ -62,8 +62,8 @@ public class automation_Template_0118_Template {
 
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
-		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
-		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_password"))).sendKeys("notsharable1");
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("");
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_password"))).sendKeys("");
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button#btnLogin"))).click();
 		// Accept Okay login
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
@@ -232,7 +232,6 @@ public class automation_Template_0118_Template {
 		// Select Yes option
 		new Select(driver.findElement(By.cssSelector("select#id_template_automatic_approval"))).selectByVisibleText("Yes");
 
-		
 	}
 
 	public void sleepInSecond(long timeInSecond) {

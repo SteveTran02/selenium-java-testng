@@ -61,8 +61,8 @@ public class automation_Template_0118 {
 	public void TC_01_Verify_Add_New_Template_Button() {
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
-		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
-		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_password"))).sendKeys("notsharable1");
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("");
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_password"))).sendKeys("");
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button#btnLogin"))).click();
 		// Accept Okay login
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
@@ -325,7 +325,7 @@ public class automation_Template_0118 {
 			jsExecutor.executeScript("arguments[0].scrollIntoView(false);", webElement);
 			jsExecutor.executeScript("arguments[0].click();", webElement);
 			sleepInSecond(2);
-			// Verify 
+			// Verify
 			Assert.assertTrue(webElement.getAttribute("class").contains("current"));
 			sleepInSecond(2);
 
@@ -336,7 +336,7 @@ public class automation_Template_0118 {
 	// @Test
 	public void TC_09_Verify_Search_Field() {
 		By searchTextbox = By.cssSelector("div#myTable_filter input[type='search']");
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -346,38 +346,38 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
+
 		// Click on Search placeholder
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(searchTextbox));
 		// Assert.assertTrue(driver.findElement(By.cssSelector("div#myTable_filter input[type='search']")).isSelected());
-		
+
 		// Search field: type free text (ex: 9501Q)
 		driver.findElement(searchTextbox).sendKeys("9501Q");
 		sleepInSecond(2);
 		Assert.assertEquals(driver.findElement(searchTextbox).getAttribute("value"), "9501Q");
 		sleepInSecond(2);
-		
-		// Clear text search field    
+
+		// Clear text search field
 		driver.findElement(searchTextbox).clear();
 		sleepInSecond(2);
-		// Verify search textbox is empty 
+		// Verify search textbox is empty
 		Assert.assertTrue(driver.findElement(searchTextbox).getAttribute("value").isEmpty());
-		
+
 	}
-	
+
 	// @Test
 	public void TC_10_Verify_Template_Category_dropbox() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -387,22 +387,22 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		// Click on Template Category dropbox    
+
+		// Click on Template Category dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#id_TemplateCategory"))).click();
-		
+
 		// Verify display all Template Category
-		String templateCategoryArr[] = {"All", "Automotive Fluids", "Oils", "Universal Waste"};
+		String templateCategoryArr[] = { "All", "Automotive Fluids", "Oils", "Universal Waste" };
 		int i = 0;
 		List<WebElement> allTemplateCategory = driver.findElements(By.cssSelector("select#id_TemplateCategory option"));
 		System.out.println("size = " + allTemplateCategory.size());
@@ -410,12 +410,12 @@ public class automation_Template_0118 {
 			template.getText().equals(templateCategoryArr[i]);
 			i++;
 		}
-		
+
 	}
-	
+
 	// @Test
 	public void TC_11_Using_Template_Category_dropbox() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -425,32 +425,31 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		// Click on Template Category dropbox    
+
+		// Click on Template Category dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#id_TemplateCategory"))).click();
-		
-		// Choose "Universal Waste"   
+
+		// Choose "Universal Waste"
 		new Select(driver.findElement(By.cssSelector("select#id_TemplateCategory"))).selectByVisibleText("Universal Waste");
 		sleepInSecond(2);
 		// Verify select option
 		Assert.assertTrue(driver.findElement(By.cssSelector("select#id_TemplateCategory")).getAttribute("value").equals("Universal Waste"));
-		
+
 	}
-	
-	
+
 	// @Test
 	public void TC_12_Verify_Template_Status_dropbox() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -460,37 +459,36 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		// Click on Template Category dropbox    
+
+		// Click on Template Category dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#id_TemplateCategory"))).click();
-		
-		// Click on Template Status dropbox   
+
+		// Click on Template Status dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.search-field"))).click();
 		explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.chosen-container-active")));
 		// Verify
-		String statusName[] = {"All", "In Progress", "Submitted to WAC", "Submitted to Finance", "Approved", "Inactive"};
+		String statusName[] = { "All", "In Progress", "Submitted to WAC", "Submitted to Finance", "Approved", "Inactive" };
 		int i = 0;
-		List<WebElement> allStatus = driver.findElements(By.cssSelector("div.chosen-drop ul li"));	
+		List<WebElement> allStatus = driver.findElements(By.cssSelector("div.chosen-drop ul li"));
 		for (WebElement status : allStatus) {
 			status.getText().equals(statusName[i]);
 			i++;
-		}	
+		}
 	}
-	
-	
+
 	// @Test
 	public void TC_13_Using_Template_Status_dropbox() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -500,33 +498,32 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		// Click on Template Category dropbox    
+
+		// Click on Template Category dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#id_TemplateCategory"))).click();
-		
-		// Click on Template Status dropbox   
+
+		// Click on Template Status dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.search-field"))).click();
 		explicitWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.chosen-container-active")));
-		
+
 		// Choose "In Progress"
 		List<WebElement> deleteElement = driver.findElements(By.cssSelector("ul.chosen-choices li a"));
 		for (WebElement deleteE : deleteElement) {
 			deleteE.click();
 		}
-		
+
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.search-field"))).click();
-		
-		
+
 		List<WebElement> chosenElement = driver.findElements(By.cssSelector("div.chosen-drop ul li"));
 		for (WebElement webElement : chosenElement) {
 			if (webElement.getText().equals("In Progress")) {
@@ -534,16 +531,15 @@ public class automation_Template_0118 {
 				break;
 			}
 		}
-		
+
 		// Verify
 		List<WebElement> templateStatus = driver.findElements(By.cssSelector("div.chosen-drop ul li"));
-		
-		
+
 	}
-	
+
 	// @Test
 	public void TC_14_Verify_Automatic_Approval_dropbox() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -553,37 +549,37 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		// Click on Automatic Approval dropbox    
+
+		// Click on Automatic Approval dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#id_AutomaticApproval"))).click();
-		
+
 		// Verify display 'All', 'Yes', and 'No'
 		String text = explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='id_TemplateStatus_chosen']/following-sibling::span"))).getText();
 		// Verify text
 		Assert.assertTrue(text.contains("Automatic Approval:"));
-		
-		String textArr[] = {"All", "No", "Yes"};
+
+		String textArr[] = { "All", "No", "Yes" };
 		int i = 0;
-		List<WebElement> approvalElements  = driver.findElements(By.cssSelector("select#id_AutomaticApproval option"));
+		List<WebElement> approvalElements = driver.findElements(By.cssSelector("select#id_AutomaticApproval option"));
 		for (WebElement webElement : approvalElements) {
 			webElement.getText().equals(textArr[i]);
 			i++;
 		}
 	}
-	
-	//@Test
+
+	// @Test
 	public void TC_15_Using_Automatic_Approval_dropbox() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -593,22 +589,22 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		// Click on Automatic Approval dropbox    
+
+		// Click on Automatic Approval dropbox
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("select#id_AutomaticApproval"))).click();
-		
+
 		// Choose "Yes"
-		List<WebElement> approvalElements  = driver.findElements(By.cssSelector("select#id_AutomaticApproval option"));
+		List<WebElement> approvalElements = driver.findElements(By.cssSelector("select#id_AutomaticApproval option"));
 		for (WebElement webElement : approvalElements) {
 			if (webElement.getText().equals("Yes")) {
 				webElement.click();
@@ -616,17 +612,17 @@ public class automation_Template_0118 {
 			}
 		}
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Search']"))).click();
-		
+
 		// Verify display all Yes profile
-		List<WebElement> status  = driver.findElements(By.xpath("//tbody/tr/td[6]"));
+		List<WebElement> status = driver.findElements(By.xpath("//tbody/tr/td[6]"));
 		for (WebElement webElement : status) {
 			webElement.getText().equals("Yes");
 		}
 	}
-	
+
 	// @Test
 	public void TC_16_Template_ID_sort() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -636,45 +632,44 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
+
 		// Click on Template ID green arrow
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//th[text()='Template ID']"))).click();
-		
+
 		// Verify User able to sort by Template ID
-		
+
 		ArrayList<String> newArr1 = new ArrayList<>();
-		
-		List<WebElement> Sortings  = driver.findElements(By.cssSelector("tbody tr td.sorting_1"));
+
+		List<WebElement> Sortings = driver.findElements(By.cssSelector("tbody tr td.sorting_1"));
 		for (WebElement item : Sortings) {
 			newArr1.add(item.getText());
 		}
-		
-		List<Integer> newList = new ArrayList<Integer>(newArr1.size()) ;
+
+		List<Integer> newList = new ArrayList<Integer>(newArr1.size());
 		for (String myInt : newArr1) {
 			newList.add(Integer.valueOf(myInt));
 		}
 		// Sorting in natural order or ascending order
 		List<Integer> sortedListAsc = newList.stream().sorted().collect(Collectors.toList());
-		
+
 		// Sorting in descending order
 		List<Integer> sortedListDesc = newList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-		
+
 	}
-	
-	
+
 	// @Test
 	public void TC_17_Profile_Name_sort() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -684,41 +679,40 @@ public class automation_Template_0118 {
 		if (explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.alertLogin"))).isDisplayed()) {
 			driver.findElement(By.cssSelector("div.titleform a[onclick='loginAgain()']")).click();
 		}
-		
+
 		// Click on Set-up Tools
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.user_dropdown.jsmenu_user"))).click();
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Set-Up Tools']"))).click();
-		
+
 		// Click on Material Management tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3#tab_tools_material_management label"))).click();
-		
+
 		// Click on Template Repository tab
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Template Repository']"))).click();
-		
-		
+
 		// Click on Profile Name green arrow
 		explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//th[text()='Profile Name']"))).click();
-		
+
 		// Verify
 		ArrayList<String> profileNameList = new ArrayList<>();
-		
+
 		List<WebElement> profileElements = driver.findElements(By.cssSelector("tbody tr td.sorting_1 a"));
 		for (WebElement webElement : profileElements) {
 			profileNameList.add(webElement.getText());
 		}
-		
+
 		ArrayList<String> sortProfileNameList = new ArrayList<>();
 		for (String profileName : profileNameList) {
 			sortProfileNameList.add(profileName);
 		}
 		// sort
 		Collections.sort(sortProfileNameList);
-		
+
 	}
-	
+
 	@Test
 	public void TC_18_Template_Status_sort() {
-		
+
 		// Go to the link: networktest.wastelinq.com /Network side
 		driver.get("https://networktest.wastelinq.com/");
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#id_username"))).sendKeys("network_admin");
@@ -741,7 +735,7 @@ public class automation_Template_0118 {
 
 		// Click on Template Status green arrow
 		By templateStatus = By.xpath("//th[text()='Template Status']");
-		
+
 		// Verify
 		switch (driver.findElement(templateStatus).getAttribute("class")) {
 		case "sorting_asc":

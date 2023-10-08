@@ -120,7 +120,7 @@ public class Topic_08_Handle_Dropdown_List_Default {
 
 	}
 
-	//@Test
+	// @Test
 	public void TC_02_Add_Address() {
 		driver.findElement(By.cssSelector("li.customer-addresses>a")).click();
 		driver.findElement(By.cssSelector("div.add-button>button")).click();
@@ -154,11 +154,9 @@ public class Topic_08_Handle_Dropdown_List_Default {
 
 	}
 
-
 	public void sleepInSecond(long timeInSecond) {
 		try {
 			Thread.sleep(timeInSecond * 1000);
-			;
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
